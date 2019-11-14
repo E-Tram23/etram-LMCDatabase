@@ -12,17 +12,18 @@
           <tr>
             <th>Name</th>
             <th>Barcode</th>
+            <th>Description</th>
             <th>Date Entered</th>
           </tr>
             <?php
-                $sql = "SELECT Equipment_Name,Equipment_Barcode,Date_Entered FROM equipment";
+                $sql = "SELECT room_name,id,description,Date_Entered FROM web_equipment";
                 $result = mysqli_query($conn,$sql);
                 $resultChecker = mysqli_num_rows($result);
                 if($resultChecker>0)
                 {
                   while($row = mysqli_fetch_assoc($result))
                   {
-                    echo "<tr><td>" . $row["Equipment_Name"] . "</td><td>" . $row["Equipment_Barcode"]."</td><td>" .
+                    echo "<tr><td>" . $row["room_name"] . "</td><td>" . $row["id"]."</td><td>" . $row["description"]."</td><td>" .
                     $row["Date_Entered"] . "</td></tr>";
                   }
                   echo "</table>";
