@@ -36,7 +36,19 @@
              ?>
          </table>
           <ul>
-            <li class = "hpLink"><a href = "Add.php">Add Equpment</a></li>        <!--For Navigation -->
+            <main>
+
+              <?php
+                if(isset($_SESSION['uid']))
+                {
+                  echo '<li class = "hpLink"><a href = "Add.php">Add Equpment</a></li> ';
+                }
+                else {
+                echo '  <li class = "hpLink"><a href = "database.php">Login to Add Equipment </a></li>';
+                }
+
+
+               ?>
             <li class = "hpLink"><a href = "Remove.php">Remove Equipment </a></li>
           </ul>
         </section>

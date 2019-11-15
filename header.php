@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+  session_start();
+ ?>
 <html>
   <head>
     <meta charset = "utf-8">
@@ -11,7 +14,7 @@
   <body>
 
       <header>
-        <!-- Navbar (sit on top) 
+        <!-- Navbar (sit on top)
         <div class="w3-top">
           <div class="w3-bar w3-white w3-card" id="myNavbar">
             <a href="Main.php" class="w3-bar-item w3-button w3-wide">Home</a>
@@ -35,13 +38,20 @@
               <ul>
                 <li><a href = "Main.php">Home</a></li>        <!--For Navigation -->
                 <li><a href = "database.php">Equipment Database</a></li>
+                <?php
+                  if(isset($_SESSION['uid']))
+                  {
+                    echo ' <li><a href = "logout.inc.php">Logout </a></li>';
+                  }
+                  else {
+                  echo '<li><a href = "login.php">Login </a></li>';
+                  }
+
+                 ?>
               </ul>
-              <form action = "includes/login.php" method="post"> <!--Maybe logging in for the future -->
-
-              </form>
-              <a href="CreateAccount.php">Create Account</a>  <!--Maybe for adding an account -->
+              </div>
+              <!--<a href="CreateAccount.php">Create Account</a> Maybe for adding an account -->
               <form action = "includes/logout.php" method="post"> <!--Maybe Logging out for the future -->
-
               </form>
             </div>
         <nav>
