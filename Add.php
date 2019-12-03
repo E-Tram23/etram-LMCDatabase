@@ -10,7 +10,6 @@
             <input type="text" name ="room_name" placeholder = "Equipment name">
             <input type="text" name ="description" placeholder = "Description">
             <input type="number" name ="id" placeholder = "Barcode">
-            <input type="date" name ="Date_Entered" placeholder = "Date Entered">
             <button type = "submit" name = "add-submit">Add Equipment </button>
           </form>
         </section>
